@@ -1,0 +1,228 @@
+/* --- Estilos Generales --- */
+/* Configuración básica de la página: fuente, márgenes, color de texto y fondo. */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+}
+
+/* --- Encabezado (Header) --- */
+/* Estilos para la barra de navegación superior: fondo, relleno, color de texto y sombra. */
+.main-header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    color: #fff;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Organiza el logo y el menú con Flexbox. */
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estilos para el logo de la marca. */
+.main-header .logo {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107;
+    letter-spacing: 1px;
+}
+
+/* Estilos para la lista de elementos del menú. */
+.main-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Estilos para los enlaces del menú y efecto de subrayado. */
+.main-header nav ul li a {
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Crea el subrayado interactivo para los enlaces. */
+.main-header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Cambia el color del enlace al pasar el cursor. */
+.main-header nav ul li a:hover {
+    color: #007bff;
+}
+
+/* Expande el subrayado al pasar el cursor. */
+.main-header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Sección Catálogo de Relojes --- */
+/* Estilos para la sección principal del catálogo: padding, ancho y centrado. */
+.watch-catalog-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estilos para el título de la sección del catálogo. */
+.watch-catalog-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Define la cuadrícula para las tarjetas de relojes. */
+.watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Estilos para cada tarjeta de reloj: fondo, bordes, sombra y transición. */
+.watch-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Efecto de sombra al pasar el cursor sobre la tarjeta. */
+.watch-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Contenedor de la imagen y el overlay: posicionamiento y ocultamiento. */
+.image-container {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Estilos para la imagen del reloj, con efecto de zoom al pasar el cursor. */
+.watch-card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+/* Aplica zoom a la imagen al pasar el cursor. */
+.watch-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Estilos para el overlay de información que aparece al pasar el cursor: oculto inicialmente. */
+.overlay-info {
+    position: absolute;
+    bottom: -80px; /* Inicialmente oculto */
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 15px;
+    text-align: left;
+    transition: bottom 0.3s ease;
+}
+
+/* Hace visible el overlay al pasar el cursor. */
+.watch-card:hover .overlay-info {
+    bottom: 0;
+}
+
+/* Estilos para los párrafos dentro del overlay. */
+.overlay-info p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+/* Estilos para el nombre del reloj en la tarjeta. */
+.watch-card h3 {
+    font-size: 1.5rem;
+    margin: 15px 10px 10px;
+    color: #333;
+    text-align: center;
+}
+
+/* Estilos para el precio del reloj. */
+.watch-card .price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    margin: 0 10px 10px;
+    text-align: center;
+}
+
+/* Estilos para la etiqueta de disponibilidad. */
+.watch-card .availability {
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px auto;
+    width: fit-content;
+}
+
+/* Estilos para la etiqueta "En stock". */
+.watch-card .availability.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+/* Estilos para la etiqueta "Agotado". */
+.watch-card .availability.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+/* --- Pie de Página (Footer) --- */
+/* Estilos para el pie de página: fondo, color de texto y sombra. */
+footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive para Catálogo --- */
+/* Ajustes para la cuadrícula del catálogo en pantallas de hasta 768px. */
+@media (max-width: 768px) {
+    .watch-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .main-header nav { flex-direction: column; gap: 1rem; } /* Navegación apilada */
+    .main-header nav ul { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .banner-content h1 { font-size: 2rem; }
+    .banner-content p { font-size: 1rem; }
+}

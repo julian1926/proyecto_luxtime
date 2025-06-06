@@ -1,0 +1,423 @@
+
+/* --- Estilos Generales --- */
+body {
+    font-family: 'Arial', sans-serif; /* Fuente base y configuración global del texto y fondo */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+    line-height: 1.6;
+    background-color: #ffffff8a;
+    text-align: center;
+}
+
+a {
+    text-decoration: none; /* Elimina el subrayado de enlaces y define su color */
+    color: #007bff;
+}
+
+h1, h2, h3 {
+    margin-top: 0; /* Margen y color para los encabezados */
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+/* --- Encabezado (Header) --- */
+.main-header {
+    background-color: #1a1a1a; /* Fondo y sombra del encabezado */
+    padding: 1rem 2rem;
+    color: #d4d4d4;
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.main-header nav {
+    display: flex; /* Distribuye el logo y el menú de navegación */
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.main-header .logo {
+    font-family: 'Georgia', serif; /* Estilo del logo */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107;
+    letter-spacing: 1px;
+}
+
+.main-header nav ul {
+    list-style: none; /* Estilo de la lista de navegación */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+.main-header nav ul li a {
+    color: #d4d4d4; /* Estilo de los enlaces de navegación con efecto hover de subrayado */
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff;
+    transition: width 0.3s ease-in-out;
+}
+
+.main-header nav ul li a:hover {
+    color: #007bff;
+}
+
+.main-header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Sección del Banner Principal (Hero Banner) --- */
+.hero-banner {
+    position: relative; /* Contenedor principal del banner a pantalla completa */
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #d4d4d4;
+    overflow: hidden;
+}
+
+/* --- Slideshow (Rotación de Imágenes de Fondo) --- */
+.slideshow {
+    position: absolute; /* Imágenes de fondo en rotación con fundido */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: image-slideshow 18s infinite;
+    animation-timing-function: ease-in-out;
+}
+
+/* Define las imágenes y el retardo de su animación */
+.slideshow:nth-child(1) { background-image: url('https://i.pinimg.com/736x/45/42/c3/4542c3941af09f6d0cf804c33a7a4c2f.jpg'); animation-delay: 0s; }
+.slideshow:nth-child(2) { background-image: url('https://i.pinimg.com/736x/aa/b7/c0/aab7c0ea0dbc871b991400c645205c7d.jpg'); animation-delay: 6s; }
+.slideshow:nth-child(3) { background-image: url('https://i.pinimg.com/736x/30/8e/a2/308ea2d6f208dddbd72ecefa50989bb0.jpg'); animation-delay: 12s; }
+
+/* Animación de fundido para el slideshow */
+@keyframes image-slideshow {
+    0% { opacity: 0; }
+    5% { opacity: 1; }
+    28% { opacity: 1; }
+    33% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* --- Contenido del Banner (Texto y Botón) --- */
+.banner-content {
+    position: relative; /* Contenedor del texto y botón sobre las imágenes */
+    z-index: 10;
+    padding: 30px 40px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 15px;
+    max-width: 800px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.banner-content h1 {
+    font-size: 3.5rem; /* Estilo del título principal del banner */
+    margin-bottom: 20px;
+    color: #d4d4d4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+    font-size: 1.3rem; /* Estilo del párrafo del banner */
+    margin-bottom: 40px;
+    color: #d4d4d4;
+}
+
+/* Botón de Llamada a la Acción */
+.btn-call-to-action {
+    display: inline-block; /* Estilo y efectos hover del botón principal */
+    background-color: #ffc107;
+    color: #333;
+    padding: 1.2rem 2.5rem;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.btn-call-to-action:hover {
+    background-color: #e0ac00;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+---
+
+/* --- Sección de Relojes Destacados --- */
+.featured-watches {
+    padding: 60px 20px; /* Relleno y centrado de la sección */
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.featured-watches h2 {
+    font-size: 2.8rem; /* Estilo del título de la sección */
+    margin-bottom: 40px;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.watches-grid {
+    display: grid; /* Diseño de cuadrícula adaptable para las tarjetas de relojes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.watch-card {
+    background-color: #f8f9fa; /* Estilo base de cada tarjeta de reloj con sombra y hover */
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.watch-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.watch-card img {
+    width: 100%; /* Tamaño y ajuste de la imagen dentro de la tarjeta */
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.watch-card h3 {
+    font-size: 1.4rem; /* Estilo del título del reloj en la tarjeta */
+    color: #0056b3;
+    margin: 20px 20px 10px 20px;
+}
+
+.watch-card .price {
+    font-size: 1.2rem; /* Estilo del precio del reloj */
+    font-weight: bold;
+    color: #e63946;
+    margin: 0 20px 15px 20px;
+}
+
+.btn-detail {
+    display: block; /* Estilo y hover del botón de detalle en cada tarjeta */
+    width: calc(100% - 40px);
+    margin: 0 20px;
+    background-color: #007bff;
+    color: #d4d4d4;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.btn-detail:hover {
+    background-color: #0056b3;
+}
+
+.btn-full-catalog {
+    display: inline-block; /* Estilo del botón para el catálogo completo */
+    background-color: #1c2329;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-full-catalog:hover {
+    background-color: #525a63;
+}
+
+---
+
+/* --- Sección de Historia Corporativa --- */
+.corporate-history {
+    background-color: #fff; /* Fondo y sombra de la sección de historia */
+    padding: 80px 20px;
+    text-align: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    margin-bottom: 60px;
+}
+
+.corporate-history h2 {
+    font-size: 2.5rem; /* Estilo del título de historia */
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.corporate-history p {
+    font-size: 1.1rem; /* Estilo del párrafo de historia */
+    color: #555;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-read-more {
+    display: inline-block; /* Estilo y hover del botón "Leer Más" */
+    background-color: #007bff;
+    color: #d4d4d4;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-read-more:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+---
+
+/* --- Sección de Testimonios --- */
+.testimonials {
+    background-color: #007bff; /* Fondo y color de texto de la sección de testimonios */
+    color: #d4d4d4;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.8rem; /* Estilo del título de testimonios */
+    margin-bottom: 40px;
+    color: black;
+}
+
+/* Carrusel de Testimonios */
+.testimonial-carousel {
+    display: flex; /* Contenedor Flexbox para el carrusel horizontal con scroll-snap */
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    scrollbar-width: none; /* Oculta la barra de desplazamiento */
+    -ms-overflow-style: none;
+}
+
+.testimonial-carousel::-webkit-scrollbar {
+    display: none; /* Oculta la barra de desplazamiento en WebKit */
+}
+
+.testimonial-item {
+    flex: 0 0 100%; /* Cada ítem ocupa todo el ancho forzando el scroll; estilo visual */
+    scroll-snap-align: center;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 600px;
+    word-wrap: break-word; /* Manejo de texto largo para evitar desbordamiento */
+    overflow-wrap: break-word;
+}
+
+.testimonial-item .quote {
+    font-size: 1.3rem; /* Estilo de la cita de testimonio */
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.testimonial-item .author {
+    font-size: 1.1rem; /* Estilo del autor del testimonio */
+    font-weight: bold;
+    color: #ffc107;
+}
+
+/* --- Pie de Página (Footer) --- */
+footer {
+    background-color: #1a1a1a; /* Fondo y texto del pie de página */
+    color: #d4d4d4;
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* --- Responsive Design (Media Queries) --- */
+/* Ajustes para pantallas medianas (tabletas grandes) */
+@media (max-width: 992px) {
+    .banner-content h1 { font-size: 2.8rem; }
+    .banner-content p { font-size: 1.1rem; }
+    .featured-watches h2, .testimonials h2 { font-size: 2.2rem; }
+    .corporate-history h2 { font-size: 2rem; }
+    .watch-card { max-width: 350px; margin: 0 auto; }
+    .watches-grid { gap: 20px; }
+    .testimonial-item { min-width: 90%; }
+}
+
+/* Ajustes para pantallas pequeñas (tabletas pequeñas, móviles grandes) */
+@media (max-width: 768px) {
+    .main-header nav { flex-direction: column; gap: 1rem; } /* Navegación apilada */
+    .main-header nav ul { flex-direction: column; align-items: center; gap: 0.8rem; }
+    .banner-content h1 { font-size: 2rem; }
+    .banner-content p { font-size: 1rem; }
+    .btn-call-to-action { padding: 0.8rem 1.5rem; font-size: 1rem; }
+    .featured-watches h2, .testimonials h2 { font-size: 1.8rem; }
+    .corporate-history { padding: 50px 15px; }
+    .corporate-history h2 { font-size: 1.8rem; }
+    .corporate-history p { font-size: 1rem; }
+    .btn-read-more { padding: 0.9rem 1.8rem; font-size: 1rem; }
+    .testimonial-carousel { padding: 10px; gap: 15px; }
+    .testimonial-item .quote { font-size: 1.1rem; }
+}
+
+/* Ajustes para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+    .main-header { padding: 1rem; }
+    .main-header .logo { font-size: 1.5rem; }
+    .main-header nav ul { gap: 0.5rem; }
+    .hero-banner { height: 80vh; }
+    .banner-content { padding: 20px; }
+    .banner-content h1 { font-size: 1.8rem; }
+    .banner-content p { font-size: 0.9rem; }
+    .btn-call-to-action { font-size: 0.9rem; padding: 0.7rem 1.2rem; }
+    .watches-grid { grid-template-columns: 1fr; } /* Tarjetas en una sola columna */
+    .watch-card { width: 100%; max-width: none; }
+}

@@ -1,0 +1,506 @@
+/* --- Estilos Generales --- */
+/* Configuración básica de la página: fuente, márgenes, color de texto y fondo. */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333; /* Color de texto oscuro */
+    line-height: 1.6;
+    background-color: #f4f7f6;
+}
+
+/* Estilos para los enlaces: quita el subrayado y define su color azul vibrante. */
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Estilos para los encabezados H1, H2 y H3: ajusta sus márgenes y color de texto. */
+h1, h2, h3 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+
+
+/* --- Encabezado (Header) --- */
+/* apariencia de la barra de navegación superior: fondo oscuro, relleno, color de texto claro y sombra. */
+.main-header {
+    background-color: #1a1a1a;
+    padding: 1rem 2rem;
+    color: #fff; /* Color de texto claro */
+    position: relative;
+    z-index: 100;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Organiza el logo y el menú dentro del encabezado usando Flexbox para alinearlos y distribuirlos. */
+.main-header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Estiliza el logo de la marca: fuente distintiva, tamaño y color dorado. */
+.main-header .logo {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #ffc107; /* Amarillo/dorado */
+    letter-spacing: 1px;
+}
+
+/* Configura la lista de elementos del menú, eliminando estilos predeterminados y usando Flexbox. */
+.main-header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2rem;
+}
+
+/* Estiliza los enlaces individuales del menú, incluyendo un efecto de subrayado que se expande al pasar el cursor. */
+.main-header nav ul li a {
+    color: #fff; /* Color de texto claro */
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Define la barra de subrayado interactiva para los enlaces del menú. */
+.main-header nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #007bff; /* Azul vibrante */
+    transition: width 0.3s ease-in-out;
+}
+
+/* Cambia el color del enlace al pasar el cursor. */
+.main-header nav ul li a:hover {
+    color: #007bff; /* Azul vibrante */
+}
+
+/* Expande el subrayado al pasar el cursor sobre el enlace. */
+.main-header nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* --- Banner Pequeño (Para páginas internas como Historia) --- */
+/* Contenedor del banner para páginas internas: imagen de fondo, altura reducida y contenido centrado. */
+.hero-banner-small {
+    background-image: url('https://via.placeholder.com/1920x400/344e41/FFFFFF?text=Historia+Luxtime');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+/* Crea una capa semitransparente sobre la imagen del banner para mejorar la legibilidad del texto. */
+.hero-banner-small .banner-overlay {
+    background-color: rgba(0, 0, 0, 0.6); /* Overlay oscuro semitransparente */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff; /* Color de texto claro */
+    padding: 20px;
+}
+
+/* Estiliza el título principal dentro del banner pequeño. */
+.hero-banner-small h1 {
+    font-size: 3.2rem;
+    margin-bottom: 10px;
+    color: #fff; /* Color de texto claro */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Estiliza el párrafo de texto dentro del banner pequeño. */
+.hero-banner-small p {
+    font-size: 1.2rem;
+    color: #fff; /* Color de texto claro */
+}
+
+---
+
+/* --- Sección de Línea del Tiempo --- */
+/* Define el padding, ancho máximo y centrado de la sección de la línea del tiempo. */
+.timeline-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estiliza el título de la sección de la línea del tiempo. */
+.timeline-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 50px;
+    color: #007bff; /* Azul vibrante */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal de la línea del tiempo, que aloja los ítems y la línea vertical. */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* Crea la línea vertical central que conecta los ítems de la línea del tiempo. */
+.timeline-container::after {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #007bff; /* Azul vibrante */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Define el estilo base para cada ítem de la línea del tiempo. */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+/* Estiliza los puntos que marcan cada evento en la línea del tiempo. */
+.timeline-dot {
+    height: 20px;
+    width: 20px;
+    background-color: #ffc107; /* Dorado */
+    border-radius: 50%;
+    position: absolute;
+    z-index: 1;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 2px #007bff; /* Azul vibrante */
+}
+
+/* Estiliza el recuadro de contenido de cada evento en la línea del tiempo. */
+.timeline-content {
+    padding: 20px 30px;
+    background-color: #f8f9fa; /* Fondo claro */
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Crea la pequeña "flecha" que apunta desde el contenido hacia la línea central. */
+.timeline-content::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+    top: 22px;
+}
+
+/* Estiliza el título de cada evento en la línea del tiempo. */
+.timeline-content h3 {
+    font-size: 1.5rem;
+    color: #0056b3; /* Azul oscuro */
+    margin-bottom: 10px;
+}
+
+/* Estiliza el párrafo descriptivo de cada evento en la línea del tiempo. */
+.timeline-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Posiciona los ítems que van a la izquierda de la línea del tiempo. */
+.timeline-item:nth-child(odd) {
+    left: 0;
+    padding-right: 60px;
+}
+
+/* Posiciona el punto de los ítems izquierdos en la línea central. */
+.timeline-item:nth-child(odd) .timeline-dot {
+    right: -10px;
+}
+
+/* Dibuja la flecha para los ítems izquierdos, apuntando hacia la línea. */
+.timeline-item:nth-child(odd) .timeline-content::after {
+    border-left: 20px solid #f8f9fa; /* Fondo claro */
+    right: -20px;
+}
+
+/* Posiciona los ítems que van a la derecha de la línea del tiempo. */
+.timeline-item:nth-child(even) {
+    left: 50%;
+    padding-left: 60px;
+}
+
+/* Posiciona el punto de los ítems derechos en la línea central. */
+.timeline-item:nth-child(even) .timeline-dot {
+    left: -10px;
+}
+
+/* Dibuja la flecha para los ítems derechos, apuntando hacia la línea. */
+.timeline-item:nth-child(even) .timeline-content::after {
+    border-right: 20px solid #f8f9fa; /* Fondo claro */
+    left: -20px;
+}
+
+/* Estiliza la fecha de cada evento en la línea del tiempo. */
+.timeline-date {
+    position: absolute;
+    top: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #007bff; /* Azul vibrante */
+    padding: 5px 10px;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Posiciona la fecha para los ítems a la izquierda de la línea. */
+.timeline-item:nth-child(odd) .timeline-date {
+    right: calc(50% + 30px);
+}
+
+/* Posiciona la fecha para los ítems a la derecha de la línea. */
+.timeline-item:nth-child(even) .timeline-date {
+    left: calc(50% + 30px);
+}
+
+/* Efectos de interacción (hover) para los ítems y puntos de la línea del tiempo. */
+.timeline-item:hover .timeline-content {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+---
+
+/* --- Sección de Galería Visual (Mosaico) --- */
+/* Define el padding, ancho máximo y centrado para la sección de la galería de imágenes. */
+.gallery-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Estiliza el título de la sección de la galería. */
+.gallery-section h2 {
+    font-size: 2.8rem;
+    margin-bottom: 40px;
+    color: #007bff; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Crea una cuadrícula flexible y adaptable para las imágenes de la galería. */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+/* Estiliza cada elemento de la galería: bordes redondeados, sombras y efectos de hover. */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efectos de escala y sombra para el ítem de galería al pasar el cursor. */
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estiliza la imagen dentro de cada ítem de galería, con un efecto de zoom al pasar el cursor. */
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+/* Aplica el efecto de zoom a la imagen al pasar el cursor sobre el ítem. */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Estiliza la capa superpuesta con texto que aparece al pasar el cursor sobre la imagen. */
+.gallery-item .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+    color: #fff; /* Color de texto claro */
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+/* Hace visible la capa superpuesta al pasar el cursor sobre el ítem de galería. */
+.gallery-item:hover .overlay {
+    transform: translateY(0);
+}
+
+/* Estiliza el texto dentro de la capa superpuesta de la galería. */
+.gallery-item .overlay p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* --- Pie de Página (Footer) --- */
+/* Define el fondo, color de texto y relleno del pie de página. */
+footer {
+    background-color: #1a1a1a;
+    color: #fff; /* Color de texto claro */
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.95rem;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+
+
+@media (max-width: 768px) {
+    /* Encabezado */
+    .main-header {
+        padding: 1rem; /* Reduce el relleno */
+    }
+
+    .main-header nav {
+        flex-direction: column; /* Apila el logo y el menú verticalmente */
+        align-items: flex-start;
+    }
+
+    .main-header nav ul {
+        flex-direction: column; /* Apila los ítems del menú */
+        width: 100%;
+        margin-top: 1rem;
+        gap: 0.5rem; /* Reduce el espacio entre ítems */
+    }
+
+    .main-header nav ul li a {
+        padding: 0.5rem 0;
+        display: block; /* Ocupa todo el ancho para facilitar el toque */
+    }
+
+    .main-header .logo {
+        font-size: 1.8rem; /* Reduce el tamaño del logo */
+    }
+
+    /* Banner Pequeño */
+    .hero-banner-small {
+        height: 30vh; /* Reduce la altura del banner */
+    }
+
+    .hero-banner-small h1 {
+        font-size: 2rem; /* Reduce el tamaño del título */
+    }
+
+    .hero-banner-small p {
+        font-size: 1rem; /* Reduce el tamaño del párrafo */
+    }
+
+    /* Secciones Generales */
+    .timeline-section,
+    .gallery-section {
+        padding: 40px 15px; /* Reduce el relleno de las secciones */
+    }
+
+    /* Títulos de Sección */
+    .timeline-section h2,
+    .gallery-section h2 {
+        font-size: 1.8rem; /* Reduce el tamaño de los títulos */
+        margin-bottom: 30px;
+    }
+
+    /* Línea del Tiempo: Se convierte en una sola columna */
+    .timeline-item {
+        width: 100%; /* Cada ítem ocupa todo el ancho */
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .timeline-item:nth-child(odd),
+    .timeline-item:nth-child(even) {
+        left: 0; /* Alinea todos los ítems a la izquierda */
+    }
+
+    .timeline-container::after {
+        left: 10px; /* Mueve la línea vertical al lado izquierdo */
+        margin-left: 0;
+    }
+
+    .timeline-dot {
+        left: 0px !important; /* Alinea los puntos a la izquierda */
+        margin-left: 0;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-content::after,
+    .timeline-item:nth-child(even) .timeline-content::after {
+        border-right: 20px solid #f8f9fa; /* Ajusta la flecha */
+        border-left: none;
+        left: -20px;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-date,
+    .timeline-item:nth-child(even) .timeline-date {
+        position: static; /* La fecha se posiciona normalmente */
+        text-align: left;
+        margin-bottom: 10px;
+    }
+
+    .timeline-content {
+        padding: 15px; /* Reduce el relleno del contenido */
+    }
+
+    .timeline-content h3 {
+        font-size: 1.3rem; /* Reduce el tamaño del título del evento */
+    }
+
+    .timeline-content p {
+        font-size: 0.9rem; /* Reduce el tamaño del párrafo del evento */
+    }
+
+    /* Galería de Imágenes */
+    .image-gallery {
+        grid-template-columns: 1fr; /* Una sola columna para las imágenes */
+    }
+
+    .gallery-item {
+        min-width: unset; /* Elimina el ancho mínimo para que se ajuste */
+    }
+}
