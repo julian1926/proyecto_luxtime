@@ -94,6 +94,245 @@ h1, h2, h3 {
     text-align: center;
     color: #d4d4d4;
     overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* --- Banner Overlay --- */
+.banner-overlay {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.banner-overlay h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.banner-overlay p {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    color: #f0f0f0;
+}
+
+/* --- CTA Button --- */
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #ffc107, #ff9800);
+    color: #333;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 193, 7, 0.3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 193, 7, 0.4);
+    color: #333;
+}
+
+/* --- Featured Section --- */
+.featured-section {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+}
+
+.featured-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.featured-card {
+    background: white;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.featured-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+}
+
+.featured-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.featured-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.featured-card .price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.view-more {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.view-more:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* --- About Section --- */
+.about-section {
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: white;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+}
+
+.learn-more {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.learn-more:hover {
+    background-color: white;
+    color: #667eea;
+    transform: scale(1.05);
+}
+
+/* --- Contact Preview --- */
+.contact-preview {
+    padding: 80px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.contact-preview h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.contact-preview p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, #28a745, #20c997);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.contact-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+    color: white;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #1a1a1a;
+    color: #d4d4d4;
+    padding: 40px 20px 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #d4d4d4;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #ffc107;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #333;
 }
 
 /* --- Slideshow (Rotación de Imágenes de Fondo) --- */
@@ -385,10 +624,17 @@ footer {
 @media (max-width: 992px) {
     .banner-content h1 { font-size: 2.8rem; }
     .banner-content p { font-size: 1.1rem; }
+    .banner-overlay h1 { font-size: 2.8rem; }
+    .banner-overlay p { font-size: 1.1rem; }
     .featured-watches h2, .testimonials h2 { font-size: 2.2rem; }
+    .featured-section h2 { font-size: 2.2rem; }
+    .about-content h2 { font-size: 2.2rem; }
+    .contact-preview h2 { font-size: 2.2rem; }
     .corporate-history h2 { font-size: 2rem; }
     .watch-card { max-width: 350px; margin: 0 auto; }
+    .featured-card { max-width: 350px; margin: 0 auto; }
     .watches-grid { gap: 20px; }
+    .featured-grid { gap: 20px; }
     .testimonial-item { min-width: 90%; }
 }
 
@@ -398,14 +644,26 @@ footer {
     .main-header nav ul { flex-direction: column; align-items: center; gap: 0.8rem; }
     .banner-content h1 { font-size: 2rem; }
     .banner-content p { font-size: 1rem; }
+    .banner-overlay h1 { font-size: 2rem; }
+    .banner-overlay p { font-size: 1rem; }
     .btn-call-to-action { padding: 0.8rem 1.5rem; font-size: 1rem; }
+    .cta-button { padding: 0.8rem 1.5rem; font-size: 1rem; }
     .featured-watches h2, .testimonials h2 { font-size: 1.8rem; }
+    .featured-section h2 { font-size: 1.8rem; }
+    .about-content h2 { font-size: 1.8rem; }
+    .contact-preview h2 { font-size: 1.8rem; }
     .corporate-history { padding: 50px 15px; }
     .corporate-history h2 { font-size: 1.8rem; }
     .corporate-history p { font-size: 1rem; }
+    .about-content p { font-size: 1rem; }
+    .contact-preview p { font-size: 1rem; }
     .btn-read-more { padding: 0.9rem 1.8rem; font-size: 1rem; }
+    .learn-more { padding: 0.9rem 1.8rem; font-size: 1rem; }
+    .contact-button { padding: 0.9rem 1.8rem; font-size: 1rem; }
     .testimonial-carousel { padding: 10px; gap: 15px; }
     .testimonial-item .quote { font-size: 1.1rem; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .footer-content { grid-template-columns: 1fr; }
 }
 
 /* Ajustes para pantallas muy pequeñas (móviles) */
@@ -417,7 +675,19 @@ footer {
     .banner-content { padding: 20px; }
     .banner-content h1 { font-size: 1.8rem; }
     .banner-content p { font-size: 0.9rem; }
+    .banner-overlay { padding: 1rem; }
+    .banner-overlay h1 { font-size: 1.8rem; }
+    .banner-overlay p { font-size: 0.9rem; }
     .btn-call-to-action { font-size: 0.9rem; padding: 0.7rem 1.2rem; }
+    .cta-button { font-size: 0.9rem; padding: 0.7rem 1.2rem; }
     .watches-grid { grid-template-columns: 1fr; } /* Tarjetas en una sola columna */
     .watch-card { width: 100%; max-width: none; }
+    .featured-grid { grid-template-columns: 1fr; }
+    .featured-card { width: 100%; max-width: none; }
+    .featured-section { padding: 40px 15px; }
+    .about-section { padding: 40px 15px; }
+    .contact-preview { padding: 40px 15px; }
+    .about-content h2 { font-size: 1.6rem; }
+    .contact-preview h2 { font-size: 1.6rem; }
+    .featured-section h2 { font-size: 1.6rem; }
 }
